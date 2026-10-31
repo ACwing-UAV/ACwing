@@ -11,3 +11,8 @@ updates:
     commit-message:
       prefix: "submodule"
     open-pull-requests-limit: 3
+    # Since July 2026 version updates wait 3 days by default (protection against
+    # compromised third-party packages). The submodules are our own repositories:
+    # no waiting.
+    cooldown:
+      default-days: 0
