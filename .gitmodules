@@ -1,12 +1,12 @@
 [submodule "fw"]
 	path = fw
-	url = ../ACwing_FW.git
+	url = https://github.com/ACwing-UAV/ACwing_FW.git
 	branch = main
 [submodule "hw"]
 	path = hw
-	url = ../ACwing_HW.git
+	url = https://github.com/ACwing-UAV/ACwing_HW.git
 	branch = main
 [submodule "mech"]
 	path = mech
-	url = ../ACwing_Mechs.git
+	url = https://github.com/ACwing-UAV/ACwing_Mechs.git
 	branch = main
