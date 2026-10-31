@@ -1,0 +1,13 @@
+# Weekly pull request when ACwing_FW, ACwing_HW or ACwing_Mechs has moved
+# ahead of the commit pinned here. Merge it only after checking the combination
+# (and update COMPATIBILITY.md in the same pull request).
+version: 2
+updates:
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "submodule"
+    open-pull-requests-limit: 3
