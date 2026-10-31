@@ -9,7 +9,8 @@ Status: **planned** (not built), **bench** (powered and tested on the bench),
 
 | System tag | Date | FW | HW (board revisions) | Mech | Status | Notes |
 |---|---|---|---|---|---|---|
-| — (first pin, untagged) | 2026-10-31 | `aa16f12` | `9956bfc`: FC rev A (layout 2026-10-24), ESC 1S rev A, GPS rev A, Flow rev A | `739482f` (empty: structure only) | planned | first recording after the move to the ACwing-UAV organization. Board revisions to confirm: the table in the ACwing_HW README lists FC H, ESC B, GPS D, Flow A, while file names and text say rev A everywhere |
+| — (untagged) | 2026-10-31 | `a01e832` | `0562ac6`: FC, ESC 1S, GPS, Flow all **rev A** (layout 2026-10-24) | `f63c727` (structure only) | planned | no PCB produced yet. Brand files moved to `brand/` of this repository |
+| — (first pin, untagged) | 2026-10-31 | `aa16f12` | `9956bfc` | `739482f` | superseded | `9956bfc` had KiCad `.history` gitlinks that break `git clone --recursive` |
 
 ## Rules
 
