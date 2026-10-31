@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ACwing-UAV/ACwing_HW/main/00%20-%20Docs/05%20-%20Brand/ACwing_logo_white.png">
-    <img alt="ACwing" src="https://raw.githubusercontent.com/ACwing-UAV/ACwing_HW/main/00%20-%20Docs/05%20-%20Brand/ACwing_logo_black.png" width="260">
+    <source media="(prefers-color-scheme: dark)" srcset="brand/ACwing_logo_white.png">
+    <img alt="ACwing" src="brand/ACwing_logo_black.png" width="260">
   </picture>
 </p>
 
@@ -14,8 +14,8 @@
 
 ---
 
-This is the **system repository** of ACwing. It holds no design files of its
-own: it pins one commit of each part of the project, so that a commit (or a
+This is the **system repository** of ACwing. Apart from the shared brand files it
+holds no design files: it pins one commit of each part of the project, so that a commit (or a
 tag) of this repository names a set of firmware, hardware and mechanics that
 belong together.
 
@@ -24,6 +24,7 @@ belong together.
 | [`fw/`](https://github.com/ACwing-UAV/ACwing_FW) | ACwing_FW | flight-controller firmware (STM32WB55), Flow bridge firmware (STM32C011), PC tools in MATLAB and Python, ACwing Pilot app. Documentation: [acwing-uav.github.io/ACwing_FW](https://acwing-uav.github.io/ACwing_FW/) |
 | [`hw/`](https://github.com/ACwing-UAV/ACwing_HW) | ACwing_HW | KiCad projects and manufacturing files: FC, ESC 1S, GPS, Flow; system and stack documents |
 | [`mech/`](https://github.com/ACwing-UAV/ACwing_Mechs) | ACwing_Mechs | frames, mounts, printed parts |
+| [`brand/`](brand/) | (this repository) | logos (SVG/PNG), KiCad logo footprints `ACwing_Logo.pretty`, brand and silkscreen tools |
 
 Which versions work together, and what was tested: [COMPATIBILITY.md](COMPATIBILITY.md).
 
@@ -34,10 +35,10 @@ git lfs install                       # once: the mechanics use Git LFS
 git clone --recursive https://github.com/ACwing-UAV/ACwing.git
 ```
 
-Already cloned without `--recursive`:
+Already cloned without `--recursive`, or after a pull that moved the pins:
 
 ```
-git submodule update --init
+git submodule update --init --recursive
 ```
 
 Each folder is then a normal clone of its repository, checked out at the
@@ -77,6 +78,7 @@ link to it and never keep a copy.
 | Board 3D models (STEP) | hw → used by mech | `hw/00 - Docs/<board>_Docs/<board>.step` |
 | Stack, mechanical handoff, frame answers | hw ↔ mech | [`hw/00 - Docs/04 - System_Docs`](https://github.com/ACwing-UAV/ACwing_HW/tree/main/00%20-%20Docs/04%20-%20System_Docs) |
 | ACwing Pilot protocol v2 | fw → used by the app | [`fw/03 - Docs/firmware/protocol-v2.md`](https://github.com/ACwing-UAV/ACwing_FW/blob/main/03%20-%20Docs/firmware/protocol-v2.md) |
+| Logos and logo footprints | system → used by hw, fw, mech | [`brand/`](brand/): the boards copy the footprints they use into their own library; READMEs and the documentation site load the PNGs from `raw.githubusercontent.com/ACwing-UAV/ACwing/main/brand/` |
 
 The links point to `main` of each repository; after a recursive clone the same
 files are under `hw/` and `fw/` at the pinned commit.
