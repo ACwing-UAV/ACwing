@@ -1,0 +1,28 @@
+# Adds every new issue and pull request of this repository to the ACwing project:
+# https://github.com/orgs/ACwing-UAV/projects/1
+# Needs the organization secret ADD_TO_PROJECT_TOKEN: fine-grained token owned by
+# ACwing-UAV, Organization permissions -> Projects: Read and write
+# (repository permissions: Issues and Pull requests read-only). It expires:
+# renew it and update the secret, otherwise this workflow fails.
+name: Add to project
+
+on:
+  issues:
+    types: [opened, reopened, transferred]
+  # pull_request_target (not pull_request) so that pull requests from forks can
+  # read the secret too. Safe here: no code of the pull request is checked out.
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions: {}
+
+jobs:
+  add-to-project:
+    # Dependabot runs do not get Actions secrets: skip its pull requests
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v2.0.0
+        with:
+          project-url: https://github.com/orgs/ACwing-UAV/projects/1
+          github-token: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
