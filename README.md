@@ -85,4 +85,13 @@ files are under `hw/` and `fw/` at the pinned commit.
 
 ## License
 
-[MIT](LICENSE) for this repository; each submodule carries its own license.
+| Repository | License |
+|---|---|
+| ACwing (this repository: compatibility table, brand files) | [GPL-3.0](LICENSE) |
+| [ACwing_FW](https://github.com/ACwing-UAV/ACwing_FW) – firmware | GPL-3.0 |
+| [ACwing_HW](https://github.com/ACwing-UAV/ACwing_HW) – PCBs | CERN-OHL-S-2.0 (tools: GPL-3.0) |
+| [ACwing_Mechs](https://github.com/ACwing-UAV/ACwing_Mechs) – frame and mounts | CERN-OHL-S-2.0 (macros and scripts: GPL-3.0) |
+
+The ACwing name and logo identify the original project. The logo files in [`brand/`](brand/) are provided so the
+project's boards and documentation can use them; please do not use them on modified designs or in a way that
+suggests endorsement by the ACwing project.
